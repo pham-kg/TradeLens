@@ -45,6 +45,8 @@ INSTALLED_APPS = [
 
 ]
 
+AUTH_USER_MODEL = 'users.User'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -78,10 +80,16 @@ WSGI_APPLICATION = 'TradeLens.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
+
+# MOVE TO .ENV FILE - PASSWORD
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "TradeLens",
+        "USER": "postgres",
+        "PASSWORD": "2164",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
